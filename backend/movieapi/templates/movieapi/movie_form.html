@@ -1,0 +1,50 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'movieapi_Movie_list' %}">
+    Movie Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="detail">detail: </label>
+  <input class="form-control col-sm-10" id="detail" type="text" name="detail" value="{{ object.detail }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="watch_time">watch_time: </label>
+  <input class="form-control col-sm-10" id="watch_time" type="text" name="watch_time" value="{{ object.watch_time }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="sound">sound: </label>
+  <input class="form-control col-sm-10" id="sound" type="text" name="sound" value="{{ object.sound }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="category">category: </label>
+  <input class="form-control col-sm-10" id="category" type="text" name="category" value="{{ object.category }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="name">name: </label>
+  <input class="form-control col-sm-10" id="name" type="text" name="name" value="{{ object.name }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="trailer">trailer: </label>
+  <input class="form-control col-sm-10" id="trailer" type="text" name="trailer" value="{{ object.trailer }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="year">year: </label>
+  <input class="form-control col-sm-10" id="year" type="text" name="year" value="{{ object.year }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="picture">picture: </label>
+  <input class="form-control col-sm-10" id="picture" type="file" name="picture" value="{{ object.picture }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

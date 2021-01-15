@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'movieapi_Category_list' %}">
+    Category Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>cat_name</td><td>{{ object.cat_name }}</td></tr>
+    <tr><td>slug</td><td>{{ object.slug }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
