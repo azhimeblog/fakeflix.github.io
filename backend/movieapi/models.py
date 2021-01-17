@@ -8,11 +8,11 @@ class Movie(models.Model):
     name = models.CharField(max_length=100)
     picture = models.FileField()
     detail = models.TextField(max_length=10000)
-    watch_time = models.PositiveIntegerField()
+    watch_time = models.CharField(max_length=1000)
     sound = models.CharField(max_length=1000)
     category = models.CharField(max_length=1000)
     trailer = models.CharField(max_length=1000)
-    year = models.PositiveIntegerField()
+    year = models.CharField(max_length=1000)
     movievideo = models.CharField(max_length=1000)
 
     class Meta:
